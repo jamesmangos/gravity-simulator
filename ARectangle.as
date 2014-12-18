@@ -9,6 +9,8 @@
 	
 	public class ARectangle extends Sprite
 	{
+		private var _initX:Number;
+		private var _initY:Number;
 		private var _recX:Number;
 		private var _recY:Number;
 		private var _recWidth:int;
@@ -17,13 +19,15 @@
 		private var _speedX:Number = 0;
 		private var _speedY:Number = 0;
 		
-		
 		public function ARectangle(recX:Number, recY:Number, recWidth:int, recHeight:int)
 		{
 			_recX = recX;
 			_recY = recY;
 			_recWidth = recHeight;
 			_recHeight = recHeight;
+			
+			_initX = recX;
+			_initY = recY;
 			
 			drawARectangle();
 		}
@@ -36,6 +40,13 @@
 			graphics.endFill();
 		}
 		
+		public function resetRectangle():void
+		{
+			_recX = _initX;
+			_recY = _initY;
+			_speedX = 0;
+			_speedY = 0;
+		}
 		public function adjustGravity(Fx:Number, Fy:Number, object1:Sprite, object2:Sprite):void
 		{
 			_speedX += Fx / (_density * getArea());
