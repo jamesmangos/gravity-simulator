@@ -1,4 +1,4 @@
-//language: flash actionscript 3.0
+﻿//language: flash actionscript 3.0
 package
 {
 	import flash.display.Sprite;
@@ -19,9 +19,9 @@ package
 		{
 			//optional stage allignment code
 			//import flash.display.StageAlign;
-      //import flash.display.StageScaleMode;
+			//import flash.display.StageScaleMode;
 			//this.stage.scaleMode = StageScaleMode.NO_SCALE;
-      //this.stage.align = StageAlign.TOP_LEFT;
+			//this.stage.align = StageAlign.TOP_LEFT;
 			
 			rectangle = new ARectangle(0,this.stage.stageHeight-5,5,5);
 			circle1 = new ACircle(100,100,25,5, rectangle.recX, rectangle.recY);
@@ -45,6 +45,10 @@ package
 		
 		function keyDown(event:KeyboardEvent):void
 		{
+			//development code to determine the keyCode of a key
+			//trace("Key Pressed: " + String.fromCharCode(event.charCode) + " (character code: " + event.charCode + ")"); 
+			//trace("key code is " + event.keyCode);
+			
 			if (event.keyCode == 39) //right arrow
 			{
 				this.rectangle.recX += 5;
@@ -60,6 +64,13 @@ package
 			if (event.keyCode == 40) //down arrow
 			{
 				this.rectangle.recY += 5; //dpwn is +ve Y axis
+			}
+			if (event.keyCode == 82) //r button //reset button
+			{
+				this.rectangle.recX = 0;
+				this.rectangle.recY = this.stage.stageHeight-5;
+				this.rectangle.speedX = 0;
+				this.rectangle.speedY = 0;
 			}
 		}
 		

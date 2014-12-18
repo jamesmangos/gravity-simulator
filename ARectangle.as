@@ -1,4 +1,4 @@
-package
+﻿package
 {
 	import flash.display.Sprite;
 	import flash.display.MovieClip;
@@ -64,14 +64,14 @@ package
 			_recX = setValue;
 		}
 		
-		public function set recY(setValue:Number):void
-		{
-			_recY = setValue;
-		}
-		
 		public function get recX():Number
 		{
 			return _recX;
+		}
+		
+		public function set recY(setValue:Number):void
+		{
+			_recY = setValue;
 		}
 		
 		public function get recY():Number
@@ -102,6 +102,16 @@ package
 		public function get recHeight():int
 		{
 			return _recHeight;
+		}
+		
+		public function set speedX(setValue:Number):void
+		{
+			_speedX = setValue;
+		}
+		
+		public function set speedY(setValue:Number):void
+		{
+			_speedY = setValue;
 		}
 		
 	}
