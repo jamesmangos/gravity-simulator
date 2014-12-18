@@ -32,6 +32,9 @@ package
 			
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 			addEventListener(Event.ENTER_FRAME,enterFrameHandler);
+			
+			// The stage handles drag release and releaseOutside events
+			stage.addEventListener(MouseEvent.MOUSE_UP,dragReleaseHandler);
 		}
 		
 		// Update every frame //gravity effect
@@ -67,11 +70,15 @@ package
 			}
 			if (event.keyCode == 82) //r button //reset button
 			{
-				this.rectangle.recX = 0;
-				this.rectangle.recY = this.stage.stageHeight-5;
-				this.rectangle.speedX = 0;
-				this.rectangle.speedY = 0;
+				this.rectangle.resetRectangle();
 			}
+		}
+		
+		function dragReleaseHandler(event:MouseEvent)
+		{
+			circle1.dragReleaseHandler(event);
+			circle2.dragReleaseHandler(event);
+			//this.rectangle.resetRectangle();
 		}
 		
 		function calculateGravity(recX:Number, recY:Number):void
