@@ -65,7 +65,7 @@
 			_lesserY = _centreY - (_largerRadius + _lesserRadius) * Math.sin(_theta * Math.PI/180);
 		
 			graphics.clear();
-			graphics.lineStyle(2,0xFFFFFF,1);//2 pixels, black, alpha=1
+			graphics.lineStyle(2,0xFF0000,1);//2 pixels, black, alpha=1
 			graphics.drawCircle(_centreX,_centreY,_largerRadius);
 			graphics.drawCircle(_lesserX,_lesserY,_lesserRadius);
 		}
